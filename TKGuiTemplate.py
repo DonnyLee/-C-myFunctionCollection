@@ -1,9 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog as fd    # for get End of (Pipe or Textfield)
-from tkinter import Canvas    # for get End of (Pipe or Textfield)
 from PIL import Image
-import platform as plf  # for check os
-import os   # for terminal command
 
 # template for simple GUI using TK.
 # by Don the Cat  (Git)
@@ -42,8 +39,10 @@ class TemplateTKGui:
 
         #   image
         image_path = "theCatDon.png"
+        resizeW = 50
+        resizeH = 50
         self.img = Image.open(image_path)
-        self.img = self.img.resize((22, 22), Image.ANTIALIAS)
+        self.img = self.img.resize((resizeW, resizeH), Image.ANTIALIAS)
         image_path_resized = "tmp_img_resize.png"
         self.img.save(image_path_resized, "png")
         self.img = tk.PhotoImage(file=image_path_resized)
